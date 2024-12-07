@@ -1,0 +1,64 @@
+
+<form #cadastroForm="ngForm" (ngSubmit)="onSubmit(cadastroForm.value)">
+  <!-- Dados Pessoais -->
+  <fieldset>
+    <legend>Dados Pessoais</legend>
+
+    <label for="nome">Nome completo:</label>
+    <input id="nome" name="nome" type="text" required ngModel />
+
+    <label for="cpf">CPF:</label>
+    <input id="cpf" name="cpf" type="text" required ngModel pattern="\d{11}" />
+
+    <label for="estadoCivil">Estado Civil:</label>
+    <select id="estadoCivil" name="estadoCivil" required ngModel>
+      <option value="Solteiro">Solteiro</option>
+      <option value="Casado">Casado</option>
+      <option value="Viúvo">Viúvo</option>
+      <option value="Divorciado">Divorciado</option>
+    </select>
+
+    <label for="nascimento">Data de Nascimento:</label>
+    <input id="nascimento" name="nascimento" type="date" required ngModel />
+  </fieldset>
+
+  <!-- Dados de Contato -->
+  <fieldset>
+    <legend>Dados de Contato</legend>
+
+    <label for="endereco">Endereço:</label>
+    <input id="endereco" name="endereco" type="text" required ngModel />
+
+    <label for="bairro">Bairro:</label>
+    <input id="bairro" name="bairro" type="text" required ngModel />
+
+    <label for="cidade">Cidade:</label>
+    <input id="cidade" name="cidade" type="text" required ngModel />
+
+    <label for="uf">UF:</label>
+    <select id="uf" name="uf" required ngModel>
+      <option *ngFor="let estado of estados" [value]="estado">
+        {{ estado }}
+      </option>
+    </select>
+
+    <label for="cep">CEP:</label>
+    <input id="cep" name="cep" type="text" required ngModel pattern="\d{8}" />
+
+    <label for="celular">Celular:</label>
+    <input id="celular" name="celular" type="tel" required ngModel pattern="\d{11}" />
+  </fieldset>
+
+  <!-- Dados de Cadastro -->
+  <fieldset>
+    <legend>Dados de Cadastro</legend>
+
+    <label for="login">Login:</label>
+    <input id="login" name="login" type="text" required ngModel />
+
+    <label for="senha">Senha:</label>
+    <input id="senha" name="senha" type="password" required ngModel />
+  </fieldset>
+
+  <button type="submit">Cadastrar</button>
+</form>

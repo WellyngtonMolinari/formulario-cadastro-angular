@@ -1,0 +1,29 @@
+<h1>Relatório de Cadastro</h1>
+
+<div class="relatorio">
+  <h2>Dados Pessoais</h2>
+  <ul>
+    <li><strong>Nome completo:</strong> {{ dados.nome }}</li>
+    <li><strong>CPF:</strong> {{ dados.cpf }}</li>
+    <li><strong>Estado Civil:</strong> {{ dados.estadoCivil }}</li>
+    <li><strong>Data de Nascimento:</strong> {{ dados.nascimento }}</li>
+  </ul>
+
+  <h2>Dados de Contato</h2>
+  <ul>
+    <li><strong>Endereço:</strong> {{ dados.endereco }}</li>
+    <li><strong>Bairro:</strong> {{ dados.bairro }}</li>
+    <li><strong>Cidade:</strong> {{ dados.cidade }}</li>
+    <li><strong>UF:</strong> {{ dados.uf }}</li>
+    <li><strong>CEP:</strong> {{ dados.cep }}</li>
+    <li><strong>Celular:</strong> {{ dados.celular }}</li>
+  </ul>
+
+  <h2>Dados de Cadastro</h2>
+  <ul>
+    <li><strong>Login:</strong> {{ dados.login }}</li>
+    <li><strong>Senha:</strong> {{ dados.senha }}</li>
+  </ul>
+
+  <button (click)="voltar()">Voltar</button>
+</div>
